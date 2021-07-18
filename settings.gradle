@@ -1,2 +1,3 @@
+include ':event-repository'
 include ':app'
 rootProject.name = "KotlinEvents"
