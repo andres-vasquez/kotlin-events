@@ -1,7 +1,8 @@
-package com.github.andresvasquez.kotlinevents
+package com.github.andresvasquez.kotlinevents.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.github.andresvasquez.kotlinevents.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
