@@ -25,9 +25,28 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            minifyEnabled false
+            debuggable true
+
+            buildConfigField 'String', "API_KEY", API_KEY_DEBUG
+        }
+
+        preprod {
+            applicationIdSuffix ".preprod"
+            minifyEnabled false
+            debuggable true
+
+            buildConfigField 'String', "API_KEY", API_KEY_PREPROD
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
+
+            buildConfigField 'String', "API_KEY", API_KEY_RELEASE
         }
     }
     compileOptions {

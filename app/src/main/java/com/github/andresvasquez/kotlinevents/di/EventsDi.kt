@@ -11,9 +11,11 @@ import com.github.andresvasquez.event_repository.data.source.prefs.PrefsDataSour
 import com.github.andresvasquez.event_repository.data.source.prefs.PrefsDataSourceI
 import com.github.andresvasquez.event_repository.data.source.remote.RemoteDataSource
 import com.github.andresvasquez.event_repository.data.source.remote.RemoteDataSourceI
+import com.github.andresvasquez.kotlinevents.BuildConfig
 import com.github.andresvasquez.kotlinevents.ui.detail.EventDetailViewModel
 import com.github.andresvasquez.kotlinevents.ui.list.EventListViewModel
 import com.github.andresvasquez.kotlinevents.ui.splash.SplashViewModel
+import com.github.andresvasquez.kotlinevents.utils.Constants
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
@@ -36,7 +38,7 @@ class EventsDi {
                     LocalDataSource(get()) as LocalDataSourceI
                 }
                 single {
-                    RemoteDataSource() as RemoteDataSourceI
+                    RemoteDataSource(Constants.API_KEY) as RemoteDataSourceI
                 }
                 single {
                     PrefsDataSource(app) as PrefsDataSourceI
