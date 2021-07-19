@@ -16,10 +16,10 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 data class Classifications(
     @SerializedName("primary") val primary: Boolean,
-    @SerializedName("segment") val segment: Segment,
-    @SerializedName("genre") val genre: Genre,
-    @SerializedName("subGenre") val subGenre: SubGenre,
-    @SerializedName("type") val type: Type,
-    @SerializedName("subType") val subType: SubType,
+    @SerializedName("segment") val segment: Segment?,
+    @SerializedName("genre") val genre: Genre?,
+    @SerializedName("subGenre") val subGenre: SubGenre?,
+    @SerializedName("type") val type: Type?,
+    @SerializedName("subType") val subType: SubType?,
     @SerializedName("family") val family: Boolean
 )

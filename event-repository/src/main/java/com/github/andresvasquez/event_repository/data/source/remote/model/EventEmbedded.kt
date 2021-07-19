@@ -1,7 +1,6 @@
 package com.github.andresvasquez.event_repository.data.source.remote.model
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 /*
 Copyright (c) 2021 Kotlin Data Classes Generated from JSON powered by http://www.json2kotlin.com
@@ -15,13 +14,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 
-data class Start(
-
-    @SerializedName("localDate") val localDate: String,
-    @SerializedName("localTime") val localTime: String,
-    @SerializedName("dateTime") val dateTime: Date,
-    @SerializedName("dateTBD") val dateTBD: Boolean,
-    @SerializedName("dateTBA") val dateTBA: Boolean,
-    @SerializedName("timeTBA") val timeTBA: Boolean,
-    @SerializedName("noSpecificTime") val noSpecificTime: Boolean
+data class EventEmbedded(
+    @SerializedName("venues") val venues: List<Venues>,
+    @SerializedName("attractions") val attractions: List<Attractions>
 )

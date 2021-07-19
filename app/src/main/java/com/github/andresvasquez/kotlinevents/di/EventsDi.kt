@@ -2,6 +2,7 @@ package com.github.andresvasquez.kotlinevents.di
 
 import android.app.Application
 import android.content.Context
+import com.github.andresvasquez.event_repository.EventFacade
 import com.github.andresvasquez.event_repository.data.source.EventRepository
 import com.github.andresvasquez.event_repository.data.source.EventRepositoryI
 import com.github.andresvasquez.event_repository.data.source.local.LocalDataSource
@@ -31,6 +32,9 @@ class EventsDi {
                 viewModel { EventDetailViewModel(get(), get()) }
 
                 //Repository components
+                single {
+                    EventFacade(get())
+                }
                 single {
                     EventRepository(get(), get(), get()) as EventRepositoryI
                 }

@@ -77,13 +77,16 @@ class MockRemoteDataSourceTest {
     @Test
     fun shouldReturnEmptyException() = runBlockingTest {
         // Given a mockJsonData with correct values
-        val json = "{\"_embedded\":{\"events\":[]},\"_links\":{\"first\":{\"href\":\"/discovery/v2/events?genreId=KnvZfZ7v7l1&startDateTime=2021-09-25T00%3A00%3A00Z&city=New+York&endDateTime=2021-10-01T00%3A00%3A00Z&page=0&size=20&sort=date,asc\"},\"self\":{\"href\":\"/discovery/v2/events?genreId=KnvZfZ7v7l1&startDateTime=2021-09-25T00%3A00%3A00Z&size=20&city=New+York&sort=date%2Casc&page=0&endDateTime=2021-10-01T00%3A00%3A00Z\"},\"next\":{\"href\":\"/discovery/v2/events?genreId=KnvZfZ7v7l1&startDateTime=2021-09-25T00%3A00%3A00Z&city=New+York&endDateTime=2021-10-01T00%3A00%3A00Z&page=1&size=20&sort=date,asc\"},\"last\":{\"href\":\"/discovery/v2/events?genreId=KnvZfZ7v7l1&startDateTime=2021-09-25T00%3A00%3A00Z&city=New+York&endDateTime=2021-10-01T00%3A00%3A00Z&page=3&size=20&sort=date,asc\"}},\"page\":{\"size\":20,\"totalElements\":0,\"totalPages\":1,\"number\":0}}"
+        val json =
+            "{\"_embedded\":{\"events\":[]},\"_links\":{\"first\":{\"href\":\"/discovery/v2/events?genreId=KnvZfZ7v7l1&startDateTime=2021-09-25T00%3A00%3A00Z&city=New+York&endDateTime=2021-10-01T00%3A00%3A00Z&page=0&size=20&sort=date,asc\"},\"self\":{\"href\":\"/discovery/v2/events?genreId=KnvZfZ7v7l1&startDateTime=2021-09-25T00%3A00%3A00Z&size=20&city=New+York&sort=date%2Casc&page=0&endDateTime=2021-10-01T00%3A00%3A00Z\"},\"next\":{\"href\":\"/discovery/v2/events?genreId=KnvZfZ7v7l1&startDateTime=2021-09-25T00%3A00%3A00Z&city=New+York&endDateTime=2021-10-01T00%3A00%3A00Z&page=1&size=20&sort=date,asc\"},\"last\":{\"href\":\"/discovery/v2/events?genreId=KnvZfZ7v7l1&startDateTime=2021-09-25T00%3A00%3A00Z&city=New+York&endDateTime=2021-10-01T00%3A00%3A00Z&page=3&size=20&sort=date,asc\"}},\"page\":{\"size\":20,\"totalElements\":0,\"totalPages\":1,\"number\":0}}"
         mockDataSource = MockRemoteDataSource(json)
 
         //WHEN getting events
         val value = mockDataSource.getEvents(
             city, startDateTime, endDateTime, sort, genreId, size, page
         )
+
+        //Then the values are controlled
         if (value is Result.Success) {
             fail("Not expected success")
         } else {

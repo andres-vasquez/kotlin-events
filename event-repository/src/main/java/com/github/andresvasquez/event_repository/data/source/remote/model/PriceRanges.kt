@@ -18,6 +18,6 @@ data class PriceRanges (
 
 	@SerializedName("type") val type : String,
 	@SerializedName("currency") val currency : String,
-	@SerializedName("min") val min : Int,
-	@SerializedName("max") val max : Int
+	@SerializedName("min") val min : Double,
+	@SerializedName("max") val max : Double
 )

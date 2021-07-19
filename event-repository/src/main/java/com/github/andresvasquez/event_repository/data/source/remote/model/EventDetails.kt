@@ -35,5 +35,6 @@ data class EventDetails(
     @SerializedName("accessibility") val accessibility: Accessibility,
     @SerializedName("ticketLimit") val ticketLimit: TicketLimit,
     @SerializedName("ageRestrictions") val ageRestrictions: AgeRestrictions,
-    @SerializedName("_links") val links: Links
+    @SerializedName("_links") val links: Links,
+    @SerializedName("_embedded") val embedded: EventEmbedded
 )
