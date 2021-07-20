@@ -20,13 +20,13 @@ class DatabaseTypeConverter {
 
 class DatabaseListTypeConverter {
     @TypeConverter
-    fun fromList(data: List<Int>): String {
+    fun fromList(data: List<String>): String {
         return Gson().toJson(data)
     }
 
     @TypeConverter
-    fun toList(data: String): List<Int> {
-        val listType: Type = object : TypeToken<ArrayList<Int?>?>() {}.getType()
+    fun toList(data: String): List<String> {
+        val listType: Type = object : TypeToken<ArrayList<String?>?>() {}.getType()
         return Gson().fromJson(data, listType)
     }
 }
