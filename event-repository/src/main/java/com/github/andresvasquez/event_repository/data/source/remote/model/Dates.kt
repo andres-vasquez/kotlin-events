@@ -14,10 +14,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 
-data class Dates (
+data class Dates(
 
-    @SerializedName("start") val start : Start,
-    @SerializedName("timezone") val timezone : String,
-    @SerializedName("status") val status : Status,
-    @SerializedName("spanMultipleDays") val spanMultipleDays : Boolean
+    @SerializedName("start") val start: Start,
+    @SerializedName("timezone") val timezone: String?,
+    @SerializedName("status") val status: Status,
+    @SerializedName("spanMultipleDays") val spanMultipleDays: Boolean
 )
