@@ -25,9 +25,31 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            minifyEnabled false
+            debuggable true
+
+            buildConfigField 'String', "API_KEY", API_KEY_DEBUG
+            buildConfigField 'String', "GMAP_API_KEY", GMAP_API_KEY_DEBUG
+        }
+
+        preprod {
+            applicationIdSuffix ".preprod"
+            minifyEnabled false
+            debuggable true
+
+            buildConfigField 'String', "API_KEY", API_KEY_PREPROD
+            buildConfigField 'String', "GMAP_API_KEY", GMAP_API_KEY_PREPROD
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
+
+            buildConfigField 'String', "API_KEY", API_KEY_RELEASE
+            buildConfigField 'String', "GMAP_API_KEY", GMAP_API_KEY_RELEASE
         }
     }
     compileOptions {
@@ -102,6 +124,7 @@ dependencies {
     //glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation "com.github.firdausmaulan:GlideSlider:1.5.1"
 
     // Logging
     implementation "com.jakewharton.timber:timber:4.7.1"
@@ -117,6 +140,12 @@ dependencies {
     //Koin
     implementation "org.koin:koin-android:$koinVersion"
     implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
+
+    //Icons
+    implementation "com.mikepenz:iconics-core:$latestAndroidIconicsRelease"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "com.mikepenz:iconics-views:$latestAndroidIconicsRelease"
+    implementation 'com.mikepenz:fontawesome-typeface:5.9.0.2-kotlin@aar'
 
     //Paging
     implementation "androidx.paging:paging-runtime:$pagingVersion"

@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">KotlinEvents</string>
+    <!-- Global -->
+    <string name="app_name">NYC Events</string>
+    <string name="view_more">Más info</string>
+    <string name="about">A cerca de la App</string>
+    <string name="from">Desde: %s</string>
+    <string name="to">Hasta: %s</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+
+    <!-- Navigation -->
+    <string name="windows_splash">Splash</string>
+    <string name="windows_list">Eventos en Nueva York!</string>
+    <string name="windows_detail">Detalles del evento</string>
+
+    <!-- Splash -->
+    <string name="instructions">Desliza a la derecha...</string>
+    <string name="splash_title">Eventos en Nueva York!</string>
+
+    <!-- List -->
+    <string name="selected_dates">Fechas Seleccionadas:</string>
+    <string name="price_from">Rango de precios:</string>
+    <string name="unknown_price">Precio no disponible</string>
+
+    <!-- Detail -->
+    <string name="detail_date">Fecha:</string>
+    <string name="detail_price">Rango de precios:</string>
+    <string name="detail_info">Información adicional:</string>
+    <string name="detail_covid_info">COVID-19 Info</string>
+    <string name="detail_adult_only">Solo para adultos:</string>
+
+    <string name="detail_location_name">Nombre del lugar:</string>
+    <string name="detail_location_address">Dirección:</string>
+    <string name="detail_city">Ciudad:</string>
+
+    <string name="detail_location">Localización:</string>
+    <string name="detail_buy">Compra tu ticket ahora!</string>
+
+    <!-- About us -->
+    <string name="about_title">App de eventos!</string>
+    <string name="about_content">Sígueme en\nhttps://github.com/andres-vasquez</string>
+
+    <!-- Accesibility -->
+    <string name="splash_description">Imagen Splash de Nueva York</string>
+    <string name="moon_description">Animación de luna</string>
+    <string name="event_description_error">Error cargando datos</string>
+    <string name="event_description">Evento: %s</string>
+    <string name="event_image_description">Foto del evento</string>
+    <string name="event_location_description">Mapa de localización %s</string>
+    <string name="about_github_description">Icono de Github</string>
+    <string name="about_linkedin_description">Icono de LinkedIn</string>
+    <string name="about_whatsapp_description">Icono de Whatsapp</string>
 </resources>

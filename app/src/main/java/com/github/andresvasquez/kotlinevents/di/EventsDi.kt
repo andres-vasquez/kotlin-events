@@ -1,7 +1,8 @@
 package com.github.andresvasquez.kotlinevents.di
 
 import android.app.Application
-import android.content.Context
+import com.github.andresvasquez.event_repository.EventFacade
+import com.github.andresvasquez.event_repository.EventFacadeI
 import com.github.andresvasquez.event_repository.data.source.EventRepository
 import com.github.andresvasquez.event_repository.data.source.EventRepositoryI
 import com.github.andresvasquez.event_repository.data.source.local.LocalDataSource
@@ -11,9 +12,11 @@ import com.github.andresvasquez.event_repository.data.source.prefs.PrefsDataSour
 import com.github.andresvasquez.event_repository.data.source.prefs.PrefsDataSourceI
 import com.github.andresvasquez.event_repository.data.source.remote.RemoteDataSource
 import com.github.andresvasquez.event_repository.data.source.remote.RemoteDataSourceI
+import com.github.andresvasquez.kotlinevents.ui.MainViewModel
 import com.github.andresvasquez.kotlinevents.ui.detail.EventDetailViewModel
 import com.github.andresvasquez.kotlinevents.ui.list.EventListViewModel
 import com.github.andresvasquez.kotlinevents.ui.splash.SplashViewModel
+import com.github.andresvasquez.kotlinevents.utils.Constants
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
@@ -24,11 +27,15 @@ class EventsDi {
         fun buildDI(app: Application) {
             val myModule = module {
                 //View Model
+                viewModel { MainViewModel(get(), get()) }
                 viewModel { SplashViewModel(get(), get()) }
                 viewModel { EventListViewModel(get(), get()) }
                 viewModel { EventDetailViewModel(get(), get()) }
 
                 //Repository components
+                single {
+                    EventFacade(get()) as EventFacadeI
+                }
                 single {
                     EventRepository(get(), get(), get()) as EventRepositoryI
                 }
@@ -36,7 +43,7 @@ class EventsDi {
                     LocalDataSource(get()) as LocalDataSourceI
                 }
                 single {
-                    RemoteDataSource() as RemoteDataSourceI
+                    RemoteDataSource(Constants.API_KEY) as RemoteDataSourceI
                 }
                 single {
                     PrefsDataSource(app) as PrefsDataSourceI
