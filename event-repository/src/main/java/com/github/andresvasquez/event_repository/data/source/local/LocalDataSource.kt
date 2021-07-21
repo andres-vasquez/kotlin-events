@@ -8,7 +8,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class LocalDataSource internal constructor(
+class LocalDataSource constructor(
     private val database: EventDatabase,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : LocalDataSourceI {
@@ -21,9 +21,9 @@ class LocalDataSource internal constructor(
     override suspend fun getEventById(eventId: String): Result<EventDTO> =
         withContext(ioDispatcher) {
             try {
-                val movie = database.eventsDao().getEventById(eventId)
-                if (movie != null) {
-                    return@withContext Result.Success(movie)
+                val event = database.eventsDao().getEventById(eventId)
+                if (event != null) {
+                    return@withContext Result.Success(event)
                 } else {
                     return@withContext Result.Error(EventNotFoundException("Event not found!"))
                 }
@@ -32,8 +32,8 @@ class LocalDataSource internal constructor(
             }
         }
 
-    override suspend fun insertEvents(events: List<EventDTO>) {
-        database.eventsDao().insertEvents(events)
+    override suspend fun insertEvents(events: List<EventDTO>): List<Long> {
+        return database.eventsDao().insertEvents(events)
     }
 
     override suspend fun deleteEvents() {
@@ -44,7 +44,7 @@ class LocalDataSource internal constructor(
         database.remoteKeysDao().insertAll(remoteKey)
     }
 
-    override suspend fun remoteKeysEventId(eventId: String): RemoteKeys? {
+    override suspend fun remoteKeysEventId(eventId: Long): RemoteKeys? {
         return database.remoteKeysDao().remoteKeysRepoId(eventId)
     }
 

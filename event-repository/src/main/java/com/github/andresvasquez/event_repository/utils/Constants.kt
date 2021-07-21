@@ -5,7 +5,7 @@ import com.github.andresvasquez.event_repository.model.NextTripSearch
 object Constants {
     const val BASE_URL = "https://app.ticketmaster.com"
     const val API_SORT = "date,asc"
-    const val API_PAGE_SIZE = 20
+    const val API_PAGE_SIZE = 40
 
     //PAGING
     const val STARTING_PAGE_INDEX = 1

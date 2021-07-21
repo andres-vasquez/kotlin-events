@@ -8,7 +8,8 @@ import java.util.*
 fun List<EventDetails>.toEventDto(): Array<EventDTO> {
     return map {
         EventDTO(
-            id = it.id,
+            id = 0,
+            eventId = it.id,
             name = it.name,
             type = it.type,
             url = it.url,
@@ -81,5 +82,5 @@ fun EventDetails.bulidClasifications(): List<String> {
         }
     }
 
-    return list
+    return list.filter { it.toLowerCase() != "Undefined".toLowerCase() }
 }

@@ -22,6 +22,10 @@ class EventFacade(private val repository: EventRepositoryI) : EventFacadeI {
         repository.saveNextTripPrefs(nextTrip)
     }
 
+    override fun getNextTripPrefs(): NextTripSearch? {
+        return repository.getNextTripPrefs()
+    }
+
     override suspend fun refreshData() {
         repository.refreshData()
     }

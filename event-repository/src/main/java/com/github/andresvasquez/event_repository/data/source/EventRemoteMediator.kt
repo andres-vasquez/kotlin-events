@@ -79,12 +79,13 @@ class EventRemoteMediator(
                 }
                 val prevKey = if (page == STARTING_PAGE_INDEX) null else page - 1
                 val nextKey = if (endOfPaginationReached) null else page + 1
-                val keys = events.map {
-                    RemoteKeys(eventId = it.id, prevKey = prevKey, nextKey = nextKey)
+                val idsIInLocalDb = local.insertEvents(events.toEventDto().toList())
+
+                val keys = idsIInLocalDb.map {
+                    RemoteKeys(eventId = it, prevKey = prevKey, nextKey = nextKey)
                 }
 
                 local.insertAllRemoteKeys(keys)
-                local.insertEvents(events.toEventDto().toList())
 
                 return MediatorResult.Success(endOfPaginationReached = endOfPaginationReached)
             } else if (apiResponse is Result.Error) {

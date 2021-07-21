@@ -15,7 +15,7 @@ interface EventDAO {
     suspend fun getEventById(eventId: String): EventDTO?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEvents(events: List<EventDTO>)
+    suspend fun insertEvents(events: List<EventDTO>): List<Long>
 
     @Query("DELETE FROM event")
     suspend fun deleteEvents()

@@ -10,7 +10,7 @@ import java.util.*
 fun EventDTO.toEventListDomain(): EventListDomain {
     return let {
         EventListDomain(
-            id = it.id,
+            id = it.eventId,
             name = it.name,
             thumbnailImage = it.thumbnailImage,
             startDate = it.startDate,
@@ -18,7 +18,8 @@ fun EventDTO.toEventListDomain(): EventListDomain {
             priceMin = it.priceMin,
             currency = it.currency,
             classifications = it.classifications,
-            city = it.city
+            city = it.city,
+            locationName = it.locationName
         )
     }
 }
@@ -26,7 +27,7 @@ fun EventDTO.toEventListDomain(): EventListDomain {
 fun EventDTO.toEventDetailDomain(): EventDetailDomain {
     return let {
         EventDetailDomain(
-            id = it.id,
+            id = it.eventId,
             name = it.name,
             type = it.type,
             url = it.url,

@@ -8,11 +8,11 @@ interface LocalDataSourceI {
     //Events
     fun getEvents(): PagingSource<Int, EventDTO>
     suspend fun getEventById(eventId: String): Result<EventDTO>
-    suspend fun insertEvents(events: List<EventDTO>)
+    suspend fun insertEvents(events: List<EventDTO>): List<Long>
     suspend fun deleteEvents()
 
     //Remote keys
     suspend fun insertAllRemoteKeys(remoteKey: List<RemoteKeys>)
-    suspend fun remoteKeysEventId(eventId: String): RemoteKeys?
+    suspend fun remoteKeysEventId(eventId: Long): RemoteKeys?
     suspend fun clearRemoteKeys()
 }

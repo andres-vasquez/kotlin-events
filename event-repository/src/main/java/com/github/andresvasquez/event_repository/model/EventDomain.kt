@@ -1,5 +1,7 @@
 package com.github.andresvasquez.event_repository.model
 
+import android.os.Parcelable
+import java.io.Serializable
 import java.util.*
 
 data class EventListDomain(
@@ -11,8 +13,9 @@ data class EventListDomain(
     val priceMin: Double?,
     val currency: String?,
     val city: String?,
+    val locationName: String?,
     val classifications: List<String>,
-)
+) : Serializable
 
 data class EventDetailDomain(
     var id: String,
@@ -40,4 +43,4 @@ data class EventDetailDomain(
     val address: String?,
     val longitude: Double?,
     val latitude: Double?,
-)
+) : Serializable
