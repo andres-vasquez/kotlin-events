@@ -100,9 +100,10 @@ class FakeRepository constructor(
         ).flow
     }
 
-    override suspend fun getEventById(eventId: String): Result<EventDTO> {
+    override fun getEventDetails(eventId: String): LiveData<Result<EventDTO>> {
         return local.getEventById(eventId)
     }
+
 
     private suspend fun updateStatus(status: ApiStatus) {
         withContext(ioDispatcher) {

@@ -1,10 +1,14 @@
 package com.github.andresvasquez.event_repository.repository.fake
 
+import androidx.paging.ExperimentalPagingApi
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.github.andresvasquez.event_repository.data.source.local.EventDTO
 import com.github.andresvasquez.event_repository.utils.Constants
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@OptIn(ExperimentalPagingApi::class)
+@ExperimentalCoroutinesApi
 class FakePagingEvents(private val events: MutableList<EventDTO> = mutableListOf()) :
     PagingSource<Int, EventDTO>() {
 
