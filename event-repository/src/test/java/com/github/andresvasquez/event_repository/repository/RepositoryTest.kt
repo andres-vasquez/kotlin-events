@@ -3,7 +3,6 @@ package com.github.andresvasquez.event_repository.repository
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.map
-import com.github.andresvasquez.event_repository.data.source.EventRepository
 import com.github.andresvasquez.event_repository.data.source.local.EventDTO
 import com.github.andresvasquez.event_repository.data.source.remote.model.EventDetails
 import com.github.andresvasquez.event_repository.model.NextTripSearch
@@ -17,7 +16,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runBlockingTest
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.collection.IsEmptyCollection

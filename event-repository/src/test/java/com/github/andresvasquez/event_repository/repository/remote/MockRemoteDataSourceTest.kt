@@ -6,8 +6,6 @@ import com.github.andresvasquez.event_repository.data.error
 import com.github.andresvasquez.event_repository.data.source.remote.MockRemoteDataSource
 import com.github.andresvasquez.event_repository.exceptions.EventException
 import com.github.andresvasquez.event_repository.exceptions.NoEventsFoundException
-import com.github.andresvasquez.event_repository.exceptions.ServerErrorException
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.hamcrest.CoreMatchers
 import org.hamcrest.MatcherAssert.assertThat

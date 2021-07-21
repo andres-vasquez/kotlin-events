@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.github.andresvasquez.event_repository.EventFacadeI
-import com.github.andresvasquez.kotlinevents.ui.base.NavigationCommand
 import com.github.andresvasquez.kotlinevents.utils.SingleLiveEvent
 
 open class BaseViewModel(app: Application, eventFacade: EventFacadeI) : AndroidViewModel(app) {

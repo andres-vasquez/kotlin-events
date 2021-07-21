@@ -38,7 +38,7 @@
 
     <!-- About us -->
     <string name="about_title">App de eventos!</string>
-    <string name="about_content">Sígueme en https://github/andres-vasquez</string>
+    <string name="about_content">Sígueme en\nhttps://github.com/andres-vasquez</string>
 
     <!-- Accesibility -->
     <string name="splash_description">Imagen Splash de Nueva York</string>
@@ -47,4 +47,7 @@
     <string name="event_description">Evento: %s</string>
     <string name="event_image_description">Foto del evento</string>
     <string name="event_location_description">Mapa de localización %s</string>
+    <string name="about_github_description">Icono de Github</string>
+    <string name="about_linkedin_description">Icono de LinkedIn</string>
+    <string name="about_whatsapp_description">Icono de Whatsapp</string>
 </resources>

@@ -1,8 +1,8 @@
 package com.github.andresvasquez.event_repository.data.source.remote
 
-import com.github.andresvasquez.event_repository.data.source.remote.model.EventDetails
 import com.github.andresvasquez.event_repository.data.Result
 import com.github.andresvasquez.event_repository.data.source.remote.api.EventsApi
+import com.github.andresvasquez.event_repository.data.source.remote.model.EventDetails
 import com.github.andresvasquez.event_repository.exceptions.EventException
 import com.github.andresvasquez.event_repository.exceptions.NoEventsFoundException
 import com.github.andresvasquez.event_repository.exceptions.ServerErrorException

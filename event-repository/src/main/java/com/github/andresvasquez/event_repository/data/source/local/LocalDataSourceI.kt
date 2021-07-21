@@ -2,8 +2,8 @@ package com.github.andresvasquez.event_repository.data.source.local
 
 import androidx.lifecycle.LiveData
 import androidx.paging.PagingSource
-import com.github.andresvasquez.event_repository.data.source.local.paging.RemoteKeys
 import com.github.andresvasquez.event_repository.data.Result
+import com.github.andresvasquez.event_repository.data.source.local.paging.RemoteKeys
 
 interface LocalDataSourceI {
     //Events

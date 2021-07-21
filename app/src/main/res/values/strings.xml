@@ -15,7 +15,7 @@
 
     <!-- Splash -->
     <string name="instructions">Swipe right to begin</string>
-    <string name="splash_title">New York <br />events!</string>
+    <string name="splash_title">New York\nevents!</string>
 
     <!-- List -->
     <string name="selected_dates">Selected Dates:</string>
@@ -38,7 +38,7 @@
 
     <!-- About us -->
     <string name="about_title">Events App!</string>
-    <string name="about_content">Follow me at https://github/andres-vasquez</string>
+    <string name="about_content">Follow me at:\nhttps://github.com/andres-vasquez</string>
 
     <!-- Accesibility -->
     <string name="splash_description">Splash image of New York</string>
@@ -47,4 +47,7 @@
     <string name="event_description">Event: %s</string>
     <string name="event_image_description">Photo of Event</string>
     <string name="event_location_description">Event location map %s</string>
+    <string name="about_github_description">Github icon</string>
+    <string name="about_linkedin_description">LinkedIn icon</string>
+    <string name="about_whatsapp_description">Whatsapp icon</string>
 </resources>

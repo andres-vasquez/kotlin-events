@@ -34,6 +34,7 @@
             <TextView
                 android:id="@+id/item_title_text"
                 style="@style/event_title_style"
+                android:onClick="@{()-> clickListener.onClick(event)}"
                 android:text="@{event.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

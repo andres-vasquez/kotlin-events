@@ -5,7 +5,6 @@ import android.content.Context
 import com.github.andresvasquez.event_repository.model.NextTripSearch
 import com.github.andresvasquez.event_repository.utils.Constants
 import com.google.gson.Gson
-import java.lang.Exception
 
 class PrefsDataSource(val app: Application) : PrefsDataSourceI {
 
