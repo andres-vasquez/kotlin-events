@@ -7,4 +7,8 @@ object Constants {
 
     const val DATE_FORMAT = "dd/MM/YYYY"
     const val DEFAULT_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss"
+
+    //Google APIS
+    const val BASE_GMAP_URL = "https://maps.google.com/maps/api/staticmap?center="
+    const val BASE_GMAP_API_KEY = BuildConfig.GMAP_API_KEY
 }

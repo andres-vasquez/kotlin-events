@@ -17,6 +17,7 @@ import com.github.andresvasquez.event_repository.utils.Constants
 import com.github.andresvasquez.kotlinevents.R
 import com.github.andresvasquez.kotlinevents.databinding.ActivityMainBinding
 import com.github.andresvasquez.kotlinevents.databinding.NavHeaderBinding
+import com.github.andresvasquez.kotlinevents.utils.sendNotification
 import com.google.android.material.navigation.NavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -96,9 +97,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(@NonNull menuItem: MenuItem): Boolean {
         drawerLayout.closeDrawers()
         when (menuItem.itemId) {
-            R.id.about -> {
-                //TODO display a nice UI
-            }
+            R.id.about -> sendNotification(this)
         }
         return true
     }

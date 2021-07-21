@@ -1,6 +1,7 @@
 package com.github.andresvasquez.event_repository
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.map
 import androidx.paging.PagingData
 import androidx.paging.map
 import com.github.andresvasquez.event_repository.data.Result
@@ -35,13 +36,13 @@ class EventFacade(private val repository: EventRepositoryI) : EventFacadeI {
             .map { pagingData -> pagingData.map { it.toEventListDomain() } }
     }
 
-    override suspend fun getEventDetails(id: String): Result<EventDetailDomain> {
-        val value = repository.getEventById(id)
-        return if (value is Result.Success) {
-            Result.Success(value.data.toEventDetailDomain())
-        } else {
-            Result.Error(value.error!!)
+    override fun getEventDetails(id: String): LiveData<Result<EventDetailDomain>> {
+        return repository.getEventDetails(id).map {
+            if (it is Result.Success) {
+                Result.Success(it.data.toEventDetailDomain())
+            } else {
+                Result.Error(it.error!!)
+            }
         }
     }
-
 }
