@@ -14,7 +14,6 @@ import com.bumptech.glide.request.target.Target
 import com.github.andresvasquez.event_repository.model.EventListDomain
 import com.github.andresvasquez.event_repository.model.NextTripSearch
 import com.github.andresvasquez.kotlinevents.R
-import com.github.andresvasquez.kotlinevents.utils.Constants
 import com.github.andresvasquez.kotlinevents.utils.dateToString
 import com.github.andresvasquez.kotlinevents.utils.parseDateToString
 import com.google.android.material.chip.Chip

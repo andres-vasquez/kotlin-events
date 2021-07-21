@@ -4,13 +4,10 @@ import com.github.andresvasquez.event_repository.data.source.remote.model.EventD
 import com.github.andresvasquez.event_repository.data.toEventDto
 import com.google.gson.Gson
 import org.hamcrest.CoreMatchers
-import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.instanceOf
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Assert.fail
 import org.junit.Test
-import java.lang.NullPointerException
-import java.util.*
 
 class MappingTest {
     @Test

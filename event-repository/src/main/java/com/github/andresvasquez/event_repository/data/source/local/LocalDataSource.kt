@@ -8,7 +8,6 @@ import com.github.andresvasquez.event_repository.data.source.local.paging.Remote
 import com.github.andresvasquez.event_repository.exceptions.EventNotFoundException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 class LocalDataSource constructor(
     private val database: EventDatabase,

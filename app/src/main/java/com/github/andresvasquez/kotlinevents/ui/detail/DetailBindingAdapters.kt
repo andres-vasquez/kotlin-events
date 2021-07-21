@@ -2,13 +2,11 @@ package com.github.andresvasquez.kotlinevents.ui.detail
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.view.marginTop
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -22,7 +20,6 @@ import com.github.andresvasquez.kotlinevents.utils.dateToString
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import timber.log.Timber
-import java.net.URLEncoder
 import kotlin.math.roundToInt
 
 @BindingAdapter("buildCoverImage")

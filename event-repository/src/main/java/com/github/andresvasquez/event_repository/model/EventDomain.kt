@@ -1,6 +1,5 @@
 package com.github.andresvasquez.event_repository.model
 
-import android.os.Parcelable
 import java.io.Serializable
 import java.util.*
 

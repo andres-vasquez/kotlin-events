@@ -1,10 +1,8 @@
 package com.github.andresvasquez.event_repository.data
 
 import com.github.andresvasquez.event_repository.data.source.local.EventDTO
-import com.github.andresvasquez.event_repository.data.source.remote.model.EventDetails
 import com.github.andresvasquez.event_repository.model.EventDetailDomain
 import com.github.andresvasquez.event_repository.model.EventListDomain
-import java.util.*
 
 //To save in the database
 fun EventDTO.toEventListDomain(): EventListDomain {

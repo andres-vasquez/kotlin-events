@@ -12,7 +12,6 @@ import com.github.andresvasquez.event_repository.data.source.prefs.PrefsDataSour
 import com.github.andresvasquez.event_repository.data.source.prefs.PrefsDataSourceI
 import com.github.andresvasquez.event_repository.data.source.remote.RemoteDataSource
 import com.github.andresvasquez.event_repository.data.source.remote.RemoteDataSourceI
-import com.github.andresvasquez.kotlinevents.BuildConfig
 import com.github.andresvasquez.kotlinevents.ui.MainViewModel
 import com.github.andresvasquez.kotlinevents.ui.detail.EventDetailViewModel
 import com.github.andresvasquez.kotlinevents.ui.list.EventListViewModel

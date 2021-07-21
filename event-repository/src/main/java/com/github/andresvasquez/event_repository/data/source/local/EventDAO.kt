@@ -1,11 +1,11 @@
 package com.github.andresvasquez.event_repository.data.source.local
 
 import androidx.lifecycle.LiveData
+import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.paging.PagingSource
 
 @Dao
 interface EventDAO {

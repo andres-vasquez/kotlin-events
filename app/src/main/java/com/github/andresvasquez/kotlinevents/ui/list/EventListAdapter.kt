@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.github.andresvasquez.event_repository.model.EventDetailDomain
 import com.github.andresvasquez.event_repository.model.EventListDomain
 import com.github.andresvasquez.kotlinevents.databinding.ListItemBinding
 
@@ -54,6 +53,10 @@ class EventListAdapter(val clickListener: EventClickListener) :
     override fun onBindViewHolder(holder: EventListViewHolder, position: Int) {
         val event: EventListDomain? = getItem(position)
         event?.let { holder.bind(clickListener, it) }
+    }
+
+    fun getItemByPosition(position: Int): EventListDomain? {
+        return getItem(position)
     }
 }
 

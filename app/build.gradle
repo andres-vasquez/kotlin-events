@@ -141,6 +141,12 @@ dependencies {
     implementation "org.koin:koin-android:$koinVersion"
     implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
 
+    //Icons
+    implementation "com.mikepenz:iconics-core:$latestAndroidIconicsRelease"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "com.mikepenz:iconics-views:$latestAndroidIconicsRelease"
+    implementation 'com.mikepenz:fontawesome-typeface:5.9.0.2-kotlin@aar'
+
     //Paging
     implementation "androidx.paging:paging-runtime:$pagingVersion"
 

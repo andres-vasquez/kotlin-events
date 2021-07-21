@@ -4,19 +4,18 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
+import com.github.andresvasquez.event_repository.data.Result
 import com.github.andresvasquez.event_repository.data.source.local.EventDTO
 import com.github.andresvasquez.event_repository.data.source.local.LocalDataSourceI
 import com.github.andresvasquez.event_repository.data.source.local.paging.RemoteKeys
 import com.github.andresvasquez.event_repository.data.source.prefs.PrefsDataSourceI
 import com.github.andresvasquez.event_repository.data.source.remote.RemoteDataSourceI
+import com.github.andresvasquez.event_repository.data.toEventDto
 import com.github.andresvasquez.event_repository.utils.Constants
 import com.github.andresvasquez.event_repository.utils.Constants.STARTING_PAGE_INDEX
 import retrofit2.HttpException
 import java.io.IOException
 import java.io.InvalidObjectException
-import java.lang.NullPointerException
-import com.github.andresvasquez.event_repository.data.Result
-import com.github.andresvasquez.event_repository.data.toEventDto
 
 @OptIn(ExperimentalPagingApi::class)
 class EventRemoteMediator(

@@ -6,11 +6,13 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import com.github.andresvasquez.event_repository.data.Result
 import com.github.andresvasquez.event_repository.data.source.local.EventDTO
 import com.github.andresvasquez.event_repository.data.source.local.LocalDataSourceI
 import com.github.andresvasquez.event_repository.data.source.prefs.PrefsDataSourceI
 import com.github.andresvasquez.event_repository.data.source.remote.RemoteDataSourceI
 import com.github.andresvasquez.event_repository.data.source.remote.api.ApiStatus
+import com.github.andresvasquez.event_repository.data.toEventDto
 import com.github.andresvasquez.event_repository.model.NextTripSearch
 import com.github.andresvasquez.event_repository.utils.Constants
 import kotlinx.coroutines.Dispatchers
@@ -18,9 +20,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import com.github.andresvasquez.event_repository.data.Result
-import com.github.andresvasquez.event_repository.data.toEventDto
-import com.github.andresvasquez.event_repository.model.EventDetailDomain
 
 @OptIn(ExperimentalPagingApi::class)
 @ExperimentalCoroutinesApi
