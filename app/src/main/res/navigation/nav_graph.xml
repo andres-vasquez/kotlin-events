@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.github.andresvasquez.kotlinevents.ui.splash.SplashFragment"
+        android:label="@string/windows_splash"
+        app:startDestination="@id/splashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.github.andresvasquez.kotlinevents.ui.detail.EventDetailFragment"
+        android:label="@string/windows_detail"
+        tools:layout="@layout/fragment_event_detail">
+        <argument
+            android:name="event"
+            app:argType="com.github.andresvasquez.event_repository.model.EventListDomain" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventListFragment"
+        android:name="com.github.andresvasquez.kotlinevents.ui.list.EventListFragment"
+        android:label="@string/windows_list"
+        app:popUpToInclusive="true"
+        tools:layout="@layout/fragment_event_list">
+        <action
+            android:id="@+id/action_eventListFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left" />
+    </fragment>
+</navigation>

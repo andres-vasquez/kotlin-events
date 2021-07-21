@@ -1,4 +1,4 @@
-package com.udacity.nano.popularmovies.ui.base
+package com.github.andresvasquez.kotlinevents.ui.base
 
 import androidx.navigation.NavDirections
 

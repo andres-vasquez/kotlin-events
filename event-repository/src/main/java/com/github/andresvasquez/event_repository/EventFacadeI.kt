@@ -11,8 +11,9 @@ import kotlinx.coroutines.flow.Flow
 
 interface EventFacadeI {
     fun saveNextTripPrefs(nextTrip: NextTripSearch)
+    fun getNextTripPrefs(): NextTripSearch?
     suspend fun refreshData()
     fun getPagingEvents(): Flow<PagingData<EventListDomain>>
-    suspend fun getEventDetails(id: String): Result<EventDetailDomain>
+    fun getEventDetails(id: String): LiveData<Result<EventDetailDomain>>
     val status: LiveData<ApiStatus>
 }

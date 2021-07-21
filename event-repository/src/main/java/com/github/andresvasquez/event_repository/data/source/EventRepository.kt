@@ -97,7 +97,7 @@ class EventRepository(
         ).flow
     }
 
-    override suspend fun getEventById(eventId: String): Result<EventDTO> {
+    override fun getEventDetails(eventId: String): LiveData<Result<EventDTO>> {
         return local.getEventById(eventId)
     }
 

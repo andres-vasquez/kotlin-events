@@ -7,7 +7,8 @@ import java.util.*
 
 @Entity(tableName = "event")
 data class EventDTO(
-    @ColumnInfo(name = "id") @PrimaryKey var id: String,
+    @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) var id: Long,
+    @ColumnInfo(name = "eventId") var eventId: String,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "type") val type: String,
     @ColumnInfo(name = "url") val url: String,

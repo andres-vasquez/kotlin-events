@@ -1,5 +1,50 @@
 <resources>
+    <!-- Global -->
     <string name="app_name">KotlinEvents</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="view_more">View more</string>
+    <string name="about">About</string>
+    <string name="from">From: %s</string>
+    <string name="to">To: %s</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Navigation -->
+    <string name="windows_splash">Splash Screen</string>
+    <string name="windows_list">Events in New York!</string>
+    <string name="windows_detail">Event Details</string>
+
+    <!-- Splash -->
+    <string name="instructions">Swipe right to begin</string>
+    <string name="splash_title">New York <br />events!</string>
+
+    <!-- List -->
+    <string name="selected_dates">Selected Dates:</string>
+    <string name="price_from">Prices starting:</string>
+    <string name="unknown_price">Price not available</string>
+
+    <!-- Detail -->
+    <string name="detail_date">Date:</string>
+    <string name="detail_price">Price Range:</string>
+    <string name="detail_info">Event Extra info:</string>
+    <string name="detail_covid_info">COVID-19 Info</string>
+    <string name="detail_adult_only">Adult only:</string>
+
+    <string name="detail_location_name">Premise:</string>
+    <string name="detail_location_address">Address:</string>
+    <string name="detail_city">City:</string>
+
+    <string name="detail_location">Location:</string>
+    <string name="detail_buy">Buy ticket now!</string>
+
+    <!-- About us -->
+    <string name="about_title">Events App!</string>
+    <string name="about_content">Follow me at https://github/andres-vasquez</string>
+
+    <!-- Accesibility -->
+    <string name="splash_description">Splash image of New York</string>
+    <string name="moon_description">Moon with animation</string>
+    <string name="event_description_error">Failed loading event data</string>
+    <string name="event_description">Event: %s</string>
+    <string name="event_image_description">Photo of Event</string>
+    <string name="event_location_description">Event location map %s</string>
 </resources>
