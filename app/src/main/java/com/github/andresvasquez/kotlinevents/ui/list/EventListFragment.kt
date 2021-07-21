@@ -18,6 +18,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class EventListFragment : BaseFragment() {
     override val viewModel: EventListViewModel by viewModel()
 
+    private lateinit var adapter: EventListAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,21 +28,24 @@ class EventListFragment : BaseFragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        val adapter = EventListAdapter(EventClickListener { event ->
+        adapter = EventListAdapter(EventClickListener { event ->
             val navController = findNavController()
             navController.navigate(
                 EventListFragmentDirections.actionEventListFragmentToEventDetailFragment(event)
             )
         })
 
+        // Sets the adapter of the RecyclerView
+        binding.eventsRecycler.adapter = adapter
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         lifecycleScope.launch {
             viewModel.loadEvents().collectLatest { pagingData ->
                 adapter.submitData(pagingData)
             }
         }
-
-        // Sets the adapter of the RecyclerView
-        binding.eventsRecycler.adapter = adapter
-        return binding.root
     }
 }
