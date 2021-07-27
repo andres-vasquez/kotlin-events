@@ -14,7 +14,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 
 data class EventResponse(
-    @SerializedName("_embedded") val embedded: Embedded,
+    @SerializedName("_embedded") val embedded: Embedded?,
     @SerializedName("_links") val links: Links,
     @SerializedName("page") val page: Page
 )

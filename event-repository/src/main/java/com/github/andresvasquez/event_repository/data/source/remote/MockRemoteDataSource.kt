@@ -19,10 +19,10 @@ class MockRemoteDataSource(private val mockJson: String) : RemoteDataSourceI {
     ): Result<List<EventDetails>> {
         return try {
             val results = Gson().fromJson(mockJson, EventResponse::class.java)
-            return if (results.embedded.events.isNullOrEmpty()) {
+            return if (results.embedded?.events.isNullOrEmpty()) {
                 Result.Error(NoEventsFoundException("No events found for given parameters"))
             } else {
-                Result.Success(results.embedded.events)
+                Result.Success(results.embedded!!.events)
             }
         } catch (e: Exception) {
             Result.Error(RequestErrorException(e.toString()))

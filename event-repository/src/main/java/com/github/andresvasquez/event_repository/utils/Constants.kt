@@ -8,7 +8,7 @@ object Constants {
     const val API_PAGE_SIZE = 40
 
     //PAGING
-    const val STARTING_PAGE_INDEX = 1
+    const val STARTING_PAGE_INDEX = 0
 
 
     //PREFS

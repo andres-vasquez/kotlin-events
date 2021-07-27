@@ -32,7 +32,7 @@ class RemoteDataSource(apiKey: String) : RemoteDataSourceI {
                 size,
                 page
             )
-            return if (response.embedded.events.isNullOrEmpty()) {
+            return if (response.embedded == null || response.embedded.events.isNullOrEmpty()) {
                 Result.Error(NoEventsFoundException("No events available"))
             } else {
                 Result.Success(response.embedded.events)

@@ -67,30 +67,34 @@ class EventRemoteMediator(
                 )
             }
 
-            if (apiResponse is Result.Success) {
-                val events = apiResponse.data
-                val endOfPaginationReached = events.isEmpty()
+            when (apiResponse) {
+                is Result.Success -> {
+                    val events = apiResponse.data
+                    val endOfPaginationReached = events.isNullOrEmpty()
 
-                // clear all tables in the database
-                if (loadType == LoadType.REFRESH) {
-                    local.clearRemoteKeys()
-                    local.deleteEvents()
+                    // clear all tables in the database
+                    if (loadType == LoadType.REFRESH) {
+                        local.clearRemoteKeys()
+                        local.deleteEvents()
+                    }
+                    val prevKey = if (page == STARTING_PAGE_INDEX) null else page - 1
+                    val nextKey = if (endOfPaginationReached) null else page + 1
+                    val idsIInLocalDb = local.insertEvents(events.toEventDto().toList())
+
+                    val keys = idsIInLocalDb.map {
+                        RemoteKeys(eventId = it, prevKey = prevKey, nextKey = nextKey)
+                    }
+
+                    local.insertAllRemoteKeys(keys)
+
+                    return MediatorResult.Success(endOfPaginationReached = endOfPaginationReached)
                 }
-                val prevKey = if (page == STARTING_PAGE_INDEX) null else page - 1
-                val nextKey = if (endOfPaginationReached) null else page + 1
-                val idsIInLocalDb = local.insertEvents(events.toEventDto().toList())
-
-                val keys = idsIInLocalDb.map {
-                    RemoteKeys(eventId = it, prevKey = prevKey, nextKey = nextKey)
+                is Result.Error -> {
+                    return MediatorResult.Error(apiResponse.exception)
                 }
-
-                local.insertAllRemoteKeys(keys)
-
-                return MediatorResult.Success(endOfPaginationReached = endOfPaginationReached)
-            } else if (apiResponse is Result.Error) {
-                return MediatorResult.Error(apiResponse.exception)
-            } else {
-                return MediatorResult.Error(NullPointerException())
+                else -> {
+                    return MediatorResult.Error(NullPointerException())
+                }
             }
         } catch (exception: IOException) {
             return MediatorResult.Error(exception)
